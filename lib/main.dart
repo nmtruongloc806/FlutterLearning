@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import './route_transitions.dart';
 
 void main() => runApp(new MyApp());
 
@@ -92,9 +93,12 @@ class RandomEnglistWordsState extends State<RandomEnglistWords> {
       );
     };
 
-    final pageRoute = new MaterialPageRoute(builder: functionBuilder);
+    //final pageRoute = new MaterialPageRoute(builder: functionBuilder);
 
-    Navigator.of(context).push(pageRoute);
+    //Navigator.of(context).push(pageRoute);
+    Navigator.of(context).push(PageRouteTransition(
+      animationType: AnimationType.slide_right,
+      builder: functionBuilder));
   }
 }
 
